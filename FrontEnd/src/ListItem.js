@@ -8,11 +8,15 @@ class ListItem extends Component{
     }
 
     completeItem(content) {
-        this.props.completeItem(content)
+        this.props.completeItem(content);
     }
 
     deleteItem(content) {
-        this.props.deleteItem(content)
+        this.props.deleteItem(content);
+    }
+
+    updateItem(content) {
+        this.props.updateItem(content);
     }
     
 
@@ -42,8 +46,9 @@ class ListItem extends Component{
                             <input type="checkbox"
                                 checked={element.done === 1}
                                 onChange={this.completeItem.bind(this, element.content)} />
-                            <span  style={ element.done === 0 ? style1 : style2 }>{element.content}</span>
+                            <span  style={ element.done === 0 ? style1 : style2 }>{element.id}{element.content}{element.updatedAt}</span>
                             <button className="delete-btn" onClick={this.deleteItem.bind(this, element.content)} >Delete</button>
+                            <button className="update-btn" onClick={this.updateItem.bind(this, element.id)} >Update</button>
                         </li>
                     </ul>
                 )
