@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 class NewItem extends Component{
     constructor(props) {
@@ -28,9 +29,9 @@ class NewItem extends Component{
 
     render() {
         return (
-            <div>
-                <input id="new-todo" value={this.state.inputContent} onChange={this.onInputChange} placeholder="添加任务"/>
-                <button id="add-new-todo" onClick={this.onAddBtnClick}>Add</button>
+            <div className="dialog" >
+                <input type="text" id="new-todo" value={this.state.inputContent} onChange={this.onInputChange} placeholder="添加任务"/>
+                <button type="button" id="add-new-todo" onClick={this.onAddBtnClick}>Add</button>
             </div>
         )
     }

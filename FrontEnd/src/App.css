@@ -1,6 +1,80 @@
 .App {
+  /*text-align: center;*/
   text-align: center;
+  background-color: #f7f7f7;
+  margin: 50px 20%;
+  padding: 20px 0;
+  height: 100%;
+  border-radius: 5px;
 }
+.dialog {
+  text-align: left;
+  margin: -1px 5%;
+  padding: 30px 0;
+}
+
+.dialog div {
+  overflow: hidden;
+}
+input[type="text"] {
+  line-height: 40px;
+  /*align:left;*/
+  float: left;
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  border: 1px #ccc solid;
+  outline: none;
+  box-shadow: 0 0 10px #ccc;
+}
+
+button[type="button"] {
+  border: none;
+  background-color: #A1EAFB;
+  height: 40px;
+  width: 18%;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+  float: right;
+}
+ul {
+  text-align: left;
+  margin: 20px 5%;
+  border-radius: 5px;
+  border: 1px #bbb solid;
+}
+li {
+  margin-left: -40px;
+}
+
+ul li {
+  list-style: none;
+  line-height: 50px;
+  border-bottom: 1px #bbb solid;
+  padding: 0 20px;
+}
+
+ul li:hover > .delete-btn {
+  display: block;
+}
+
+.delete-btn {
+  color: rgb(12, 9, 9);
+  float: right;
+  cursor: pointer;
+  display: none;
+  border: none;
+  background-color: rgb(251, 174, 161);
+  height: 40px;
+  width: 18%;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
 
 .App-logo {
   height: 40vmin;
