@@ -63,7 +63,7 @@ class TodoList extends Component{
                     const item = this.state.todoList[index]
                     var d = new Date();
                     var ntime = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()+ ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-                    TodoList.push(Object.assign({}, item, {content: rel}, {updatedAt: ntime}))
+                    TodoList.push(Object.assign({}, item, {content: rel},{updatedAt: ntime}))
                     this.setState({
                         todoList: TodoList
                     })
