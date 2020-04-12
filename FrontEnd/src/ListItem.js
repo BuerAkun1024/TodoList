@@ -36,6 +36,7 @@ class ListItem extends Component{
         };
         //这里弃用了老师的css，因为下面return的结构大改了一下。
 
+
         
         return (
             this.props.data.map(element => {
@@ -45,9 +46,9 @@ class ListItem extends Component{
                         <li className="listItem" key={element.content}  type='none'>
                             <input type="checkbox"
                                 checked={element.done === 1}
-                                onChange={this.completeItem.bind(this, element.content)} />
+                                onChange={this.completeItem.bind(this, element.id)} />
                             <span  style={ element.done === 0 ? style1 : style2 }>{element.id}{element.content}{element.updatedAt}</span>
-                            <button className="delete-btn" onClick={this.deleteItem.bind(this, element.content)} >Delete</button>
+                            <button className="delete-btn" onClick={this.deleteItem.bind(this, element.id)} >Delete</button>
                             <button className="update-btn" onClick={this.updateItem.bind(this, element.id)} >Update</button>
                         </li>
                     </ul>

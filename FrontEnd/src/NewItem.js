@@ -22,15 +22,24 @@ class NewItem extends Component{
         this.props.addItem(this.state.inputContent)
         this.setState({
             inputContent: ''
+        })
+    }
+
+    onKeyup = (e) => {
+        if(e.keyCode === 13) {
+            //console.log("按了回车")
+            this.props.addItem(this.state.inputContent)
+            this.setState({
+                inputContent: ''
+            })
         }
-        )
     }
 
 
     render() {
         return (
             <div className="dialog" >
-                <input type="text" id="new-todo" value={this.state.inputContent} onChange={this.onInputChange} placeholder="添加任务"/>
+                <input type="text" id="new-todo" onKeyUp={this.onKeyup} value={this.state.inputContent} onChange={this.onInputChange} placeholder="添加任务" />
                 <button type="button" id="add-new-todo" onClick={this.onAddBtnClick}>Add</button>
             </div>
         )
