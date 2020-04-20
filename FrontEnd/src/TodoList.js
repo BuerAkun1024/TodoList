@@ -126,9 +126,8 @@ class TodoList extends Component{
                         deleteItem={this.deleteItem1.bind(this)}
                         updateItem={this.updateItem1.bind(this)}
                     />
-                    <li>{this.state.doneCount}已完成&nbsp;/&nbsp;{this.state.todoList.length}总数</li>
                 </ul>
-                
+                <li>{this.state.doneCount}已完成&nbsp;/&nbsp;{this.state.todoList.length}总数</li>
                 <NewItem addItem = {this.addNewItem}/>
             </div>
         );
