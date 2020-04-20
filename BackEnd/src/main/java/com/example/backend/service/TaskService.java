@@ -19,6 +19,8 @@ public class TaskService {
         return store.readTasks();
     }
 
+    public Task getLast(){return store.readLastTask();}
+
     public Task saveTask(Task task) {
         List<Task> tasks = new ArrayList<>(store.readTasks());
         task.setUpdatedAt();

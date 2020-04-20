@@ -8,6 +8,16 @@ import java.time.LocalDateTime;
 public class Task {
     private long id;
     private String content;
+    private long done;
+
+    public long getDone() {
+        return done;
+    }
+
+    public void setDone(long done) {
+        this.done = done;
+    }
+
     private LocalDateTime updatedAt;
 
     public Task() {

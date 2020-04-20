@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 @RequestMapping( "/api/tasks" )
 public class TaskController {
     @Autowired
@@ -28,27 +29,30 @@ public class TaskController {
     }
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Task> create(@RequestBody Task task) {
+    public Task create(@RequestBody Task task) {
         taskService.saveTask(task);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/tasks/{id}")
                 .buildAndExpand(task.getId())
                 .toUri();
-        return ResponseEntity.created(location).build();
+//        return ResponseEntity.created(location).build();
+        ResponseEntity.created(location).build();
+        return taskService.getLast();
     }
 
     @PutMapping(path = "/{id}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Task> update(@PathVariable Long id, @RequestBody Task task) {
+    public List<Task> update(@PathVariable Long id, @RequestBody Task task) {
         Optional<Task> updatedTask = taskService.update(new Task(id, task.getContent()));
-        return ResponseEntity.of(updatedTask);
+        return taskService.getAll();
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity delete(@PathVariable Long id) {
+    public List<Task> delete(@PathVariable Long id) {
         Optional<Task> deletedTask = taskService.delete(id);
         if (deletedTask.isPresent()) {
-            return ResponseEntity.noContent().build();
+            ResponseEntity.noContent().build();
+            return taskService.getAll();
         }
-        return ResponseEntity.notFound().build();
+        return taskService.getAll();
     }
 }
