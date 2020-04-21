@@ -9,7 +9,7 @@ todo.store.filename = <你的目录下Tasks.json的绝对路径>
 2. 命令行打开输入：gradle build
 3. 命令行输入：./gradlew bootRun
 
-![](运行截图.png)
+![](run.png)
 
 4. 接口说明
 
