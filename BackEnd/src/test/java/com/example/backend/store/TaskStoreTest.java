@@ -1,6 +1,6 @@
 package com.example.backend.store;
 
-import com.thoughtworks.campus.model.Task;
+import com.example.backend.bean.Task;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,6 @@ public class TaskStoreTest {
         assertEquals(1, tasks.size());
         assertEquals(1L, tasks.get(0).getId());
         assertEquals("test", tasks.get(0).getContent());
-        assertEquals(LocalDateTime.of(2020, 4, 5, 0, 0), tasks.get(0).getUpdatedAt());
     }
 
     @Test

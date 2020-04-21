@@ -1,7 +1,7 @@
 package com.example.backend.service;
 
-import com.thoughtworks.campus.model.Task;
-import com.thoughtworks.campus.store.TaskStore;
+import com.example.backend.bean.Task;
+import com.example.backend.store.TaskStore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
