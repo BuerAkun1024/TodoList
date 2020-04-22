@@ -24,7 +24,7 @@ class TodoList extends Component{
         axios.post('http://localhost:8080/api/tasks', {
             id: _.parseInt(this.state.todoList.length ? this.state.todoList[this.state.todoList.length - 1].id : 0) + 1,
             content: inputValue
-         }).then(res => this.setState({
+         }).then(res => this.setState({ //todoList: res.data }));
             todoList: [...this.state.todoList, res.data]
         }));
     }
@@ -97,8 +97,8 @@ class TodoList extends Component{
                         deleteItem={this.deleteItem1.bind(this)}
                         updateItem={this.updateItem1.bind(this)}
                     />
-                    <li>{this.state.doneCount}已完成&nbsp;/&nbsp;{this.state.todoList.length}总数</li>
                 </ul>
+                <li>{this.state.doneCount}已完成&nbsp;/&nbsp;{this.state.todoList.length}总数</li>
                 <NewItem addItem = {this.addNewItem}/>
             </div>
         );
